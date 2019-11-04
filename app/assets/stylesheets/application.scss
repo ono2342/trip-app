@@ -1,3 +1,50 @@
+body {
+  background-image: image-url("3720cbaf0f36bd741cb8cd560ad4fbed_m.jpg");
+  background-size: auto; 
+  background-attachment: fixed;
+}
+
+.header {
+  height: 100px;
+  background-color: rgba(226, 226, 243, 0.2);
+  .resister{
+    .header {
+      background-color: #253141;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      &__user-name {
+        justify-content: space-between;
+        width: 100%;
+        font-weight: bold;
+        display: inline-block;
+      }
+      &__menu {
+        display: flex;
+        float: right;
+        .icon {
+          color: white;
+          margin-left: 0.3rem;
+        }
+      }
+    }
+  }
+}
+.contents {
+  height:100vh;
+  .side-bar {
+  
+    box-sizing: border-box;
+    width: 300px;
+    color: white;
+    float: left;
+    height: 100%;
+  }
+}
+
+
+
 @import "variable";
 @import "reset";
 @import "font-awesome";
