@@ -1,0 +1,39 @@
+.contents {
+  height:100vh;
+  box-sizing: border-box;
+  display: flex;
+  background-image: image-url("3720cbaf0f36bd741cb8cd560ad4fbed_m.jpg");
+  background-size: auto; 
+  background-attachment: fixed;
+  .side-bar {
+    box-sizing: border-box;
+    width: 250px;
+    height: 100%;
+    font-size: 20px;
+    background-color: rgba(226, 226, 243, 0.2);
+    overflow: scroll;
+    .link {
+      margin:5px;
+      margin-left: 30px;
+    }
+    .font {
+      color:rgb(96, 155, 194);
+    }
+  }
+  .concepts {
+    width:calc(100% - 250px);
+    box-sizing: border-box;
+    overflow: scroll;
+    .title {
+      padding: 50px;
+      font-size: 100px;
+      color: rgb(41, 137, 248);
+
+    }
+    .message {
+      padding: 50px;
+      font-size: 40px;
+      color: rgb(74, 38, 233);
+    }
+  }
+}
