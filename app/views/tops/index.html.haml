@@ -1,5 +1,12 @@
 .contents
   .side-bar
     - @countries.each do |country|
-      = link_to country_articles_path(country) do
-        = country.name
+      .link
+        = link_to country_articles_path(country) ,class: "font" do
+          = country.name
+
+  .concepts
+    .title
+      Goodluck!!
+    .message
+      旅の思い出を共有しよう！

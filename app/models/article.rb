@@ -1,6 +1,8 @@
 class Article < ApplicationRecord
-  belongs_to :country
-  belongs_to :user
+  belongs_to :country, optional: true
+  belongs_to :user, optional: true
 
-  has_many :images
+  validates :text, presence: true, unless: :image?
+  mount_uploaders :images, ImageUploader
+  serialize :image, JSON
 end
