@@ -1,18 +1,19 @@
-%p#notice= notice
-%h1 Articles
-%table
-  %thead
-    %tr
-      %th Title
-      %th Content
-      %th{:colspan => "3"}
-  %tbody
-    - @articles.each do |article|
-      %tr
-        %td= article.title
-        %td= article.text
-        %td= link_to 'Show', article
-        %td= link_to 'Edit', edit_article_path(article)
-        %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
+.show
+  - @articles.each do |article|
+    .show-title
+      TITLE：
+      = article.title
+    .show-content
+      CONTENT：
+      = article.text
+    .show-image
+      PHOTO：
+      - if article.image?
+        .article_image
+        = article.title
+
+        -# %td= link_to 'Show', articles_path
+        -# %td= link_to 'Edit', edit_article_path(article)
+        -# %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Article', new_article_path
