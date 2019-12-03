@@ -1,3 +1,30 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.show {
+  height:100vh;
+  box-sizing: border-box;
+  padding: 90px;
+  background-image: url("2019-11-08 11.55.40.png");
+  background-size: contain; 
+  background-attachment: fixed;
+  color: rgb(56, 56, 56);
+  overflow: scroll;
+  .show-title {
+    font-size: 20px;
+    margin: 20px;
+    font-family: "Cash Currency";
+    padding-top: 60px;
+  }
+  .show-content {
+    font-size: 20px;
+    margin: 20px;
+    font-family: "Cash Currency";
+  }
+  .show-image {
+    font-size: 20px;
+    margin: 20px;
+    font-family: "Cash Currency";
+    .article_image {
+      padding-top :30px;
+      padding-left: 150px;
+    }
+  }
+}
