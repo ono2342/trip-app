@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index
+  before_action :set_country
   
   def index
     @articles = @country.articles.all
@@ -53,7 +54,6 @@ class ArticlesController < ApplicationController
 
   def set_country
     @country = Country.find(params[:country_id])
-
   end
 
   def article_params
