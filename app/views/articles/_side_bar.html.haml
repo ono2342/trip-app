@@ -1,0 +1,5 @@
+.side-bar
+  - @countries.each do |country|
+    .link
+      = link_to country_articles_path(country) ,class: "font" do
+        = country.name
