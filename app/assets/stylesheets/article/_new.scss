@@ -1,0 +1,43 @@
+.article-field {
+  height:100vh;
+  box-sizing: border-box;
+  padding: 80px;
+  background-image: image-url("420747659e07a580fd05367579a5681b_m.jpg");
+  background-size: cover; 
+  background-attachment: fixed;
+  .field-do {
+    padding:20px;
+    font-size: 100px;
+    font-family: 'Nightshade';
+    color: rgb(250, 251, 252);
+  }
+  .field-new {
+    padding:30px;
+    .new_article {
+      .field{
+        display: flex;
+        padding:50px;
+        .image-field{
+          #article_image {
+            padding: 15px;
+          }
+        }
+        .title-content-field {
+          #article_title{
+            height: 32px;
+            width: 550px;
+            font-size: 20px;
+          }
+          #article_content {
+            width: 550px;
+            height: 200px;
+            font-size: 20px;
+          }
+        }
+      }
+      .action {
+
+      }
+    }
+  }
+}
