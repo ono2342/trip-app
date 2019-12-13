@@ -10,8 +10,8 @@
       PHOTO：
       - if article.images.present?
         .article_image
-          = article.images.each do |image|
-            = image_tag image.image
+          - article.images.each do |image|
+            = image_tag image.image.url
 
         -# %td= link_to 'Show', articles_path
         -# %td= link_to 'Edit', edit_article_path(article)
