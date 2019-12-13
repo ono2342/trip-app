@@ -1,3 +1,31 @@
-%h1 New Article
-= render 'form', article: @article
-= link_to 'Back', articles_path
+.article-field
+  .field-do
+    post
+  .field-new
+    = form_for [@article] do |form|
+      .field
+        .image-field
+          = form.label :画像を選択
+          .image-select
+          = form.fields_for :article do |image|
+            = image.file_field :image, multiple: true, name: 'images[image][]'
+            = image.file_field :image, multiple: true, name: 'images[image][]'
+            = image.file_field :image, multiple: true, name: 'images[image][]'
+          %br/
+        .title-content-field
+          .title
+          = form.label :タイトル
+          %br/
+          = form.text_area :title
+          .content
+          = form.label :本文
+          %br/
+          = form.text_area :text
+          .country
+          = form.label :国
+          %br/
+          = form.text_area :country_id
+      .actions
+        = form.submit
+  
+  = link_to 'Back', root_path

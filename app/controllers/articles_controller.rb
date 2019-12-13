@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index
-  before_action :set_country
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_country, only: [:index]
   
   def index
     @articles = @country.articles.all
@@ -8,23 +9,23 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @article.images.build
+  end
+  
+  def create
+    @article = Article.new(article_params)
+    if @article.valid? && params[:images].present?
+      @article.save
+      params[:images][:image].each do |image|
+        @article.images.create(image: image, article_id: @article.id)
+      end
+      render :index
+    else
+      render :new
+    end
   end
   
   def edit
-  end
-
-  def create
-    @article = Article.new(article_params)
-    
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json 
-      else
-        format.html { render :new }
-        format.json 
-      end
-    end
   end
 
   def update
@@ -52,11 +53,20 @@ class ArticlesController < ApplicationController
     redirect_to action: :index unless user_signed_in?
   end
 
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
   def set_country
     @country = Country.find(params[:country_id])
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)
+    params.require(:article).permit(
+      :title, 
+      :text,
+      :country_id,
+      images_attributes: [:image]
+    ).merge(user_id: current_user.id)
   end
 end

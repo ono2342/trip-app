@@ -1,4 +1,5 @@
 .contents {
+  padding-top:80px;
   height:100vh;
   box-sizing: border-box;
   display: flex;
@@ -13,11 +14,19 @@
     background-color: rgba(226, 226, 243, 0.2);
     overflow: scroll;
     .link {
-      margin:5px;
-      margin-left: 30px;
+      margin-top:30px;
+      margin-left: 25px;
     }
     .font {
+      font-family: "Sketch";
+      text-decoration: none;
+      font-size: 32px;
       color:rgb(96, 155, 194);
+      text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #6182ca, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
+    }
+    .font:active {
+      top: 6px;
+      text-shadow: none;
     }
   }
   .concepts {
@@ -25,12 +34,15 @@
     box-sizing: border-box;
     overflow: scroll;
     .title {
+      font-family: "Daniels";
       padding: 50px;
-      font-size: 100px;
+      margin-top:50px;
+      font-size: 130px;
       color: rgb(41, 137, 248);
 
     }
     .message {
+      font-family: "Daniels";
       padding: 50px;
       font-size: 40px;
       color: rgb(74, 38, 233);
