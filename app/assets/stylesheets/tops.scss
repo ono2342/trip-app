@@ -1,39 +1,52 @@
 .contents {
-  height:100vh;
+  padding-top:70px;
   box-sizing: border-box;
   display: flex;
-  background-image: image-url("3720cbaf0f36bd741cb8cd560ad4fbed_m.jpg");
-  background-size: auto; 
-  background-attachment: fixed;
   .side-bar {
     box-sizing: border-box;
     width: 250px;
-    height: 100%;
     font-size: 20px;
-    background-color: rgba(226, 226, 243, 0.2);
+    background-color: rgb(213, 236, 255);
     overflow: scroll;
+    .link_description {
+      margin-top:30px;
+      margin-left: 25px;
+      font-size: 16px;
+      font-family: 'arial unicode ms';
+      color:#1b0a6e;
+    }
     .link {
-      margin:5px;
-      margin-left: 30px;
+      margin-top:30px;
+      margin-left: 25px;
     }
     .font {
-      color:rgb(96, 155, 194);
+      font-family: "Sketch";
+      text-decoration: none;
+      font-size: 32px;
+      color:#1b0a6e;
+      text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #6182ca, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
+    }
+    .font:active {
+      top: 6px;
+      text-shadow: none;
     }
   }
   .concepts {
+    background-color: rgb(213, 236, 255);
     width:calc(100% - 250px);
     box-sizing: border-box;
-    overflow: scroll;
     .title {
-      padding: 50px;
-      font-size: 100px;
+      font-family: "Daniels";
+      padding: 80px;
+      margin-top:50px;
+      font-size: 130px;
       color: rgb(41, 137, 248);
-
     }
     .message {
-      padding: 50px;
+      font-family: "Daniels";
+      padding: 70px;
       font-size: 40px;
-      color: rgb(74, 38, 233);
+      color: #1b0a6e;
     }
   }
 }

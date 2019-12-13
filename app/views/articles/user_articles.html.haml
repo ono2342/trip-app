@@ -1,0 +1,25 @@
+.user_articles
+  .user_name
+    = @user.name
+    さんのページ
+  - if @user_articles.present?
+    .show_detail
+      - @user_articles.each do |article|
+        .article-block
+          .show-title
+            = article.title
+          .show-country
+            = article.country.name
+          .show-content
+            = simple_format(article.text)
+          .show-image
+            - if article.images.present?
+              .article_image
+                - article.images.each do |image|
+                  = image_tag image.image.url
+          .article_detail
+            = link_to '記事を編集する', edit_article_path(article)
+            = link_to "記事を削除する", article_path(article), method: :delete,class:"destroy-btn"
+  - else
+    .article_none
+      投稿記事はまだありません。

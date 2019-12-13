@@ -1,19 +1,18 @@
-.show
-  - @articles.each do |article|
-    .show-title
-      TITLE：
-      = article.title
-    .show-content
-      CONTENT：
-      = article.text
-    .show-image
-      PHOTO：
-      - if article.image?
-        .article_image
-        = article.title
+.country_articles
+  .show_detail
+    - @articles.each do |article|
+      .article-block
+        .show-title
+          = article.title
+        .show-country
+          = article.country.name
+        .show-content
+          = simple_format(article.text)
+        .show-image
+          - if article.images.present?
+            .article_image
+              - article.images.each do |image|
+                = image_tag image.image.url
 
-        -# %td= link_to 'Show', articles_path
-        -# %td= link_to 'Edit', edit_article_path(article)
-        -# %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Article', new_article_path
+  .top-link
+    = link_to 'トップに戻る', root_path

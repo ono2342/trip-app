@@ -1,58 +1,22 @@
-.header {
-  height: 100px;
-  background-color: rgba(226, 226, 243, 0.2);
-  display: flex;
-  .welcome {
-    color:white;
-    font-size: 30px;
-    margin-right: 50px;
-  }
-  .resister{
-    .header {
-      height: 100px;
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      .user-name {
-        font-size: 30px;
-        justify-content: space-between;
-        width: 100%;
-        font-weight: bold;
-        display: inline-block;
-      }
-      &__menu {
-        display: flex;
-        float: right;
-        .icon {
-          color: white;
-          margin-left: 0.3rem;
-        }
-      }
-    }
-  }
-}
-
-.form {
-  .form-box {
-    margin-top: 100px;
-    margin-left: 200px;
-    height: 500px;
-    #article_title {
-      margin: 10px;
-      width:400px;
-      height: 30px;
-    }
-    #article_text {
-      margin: 10px;
-      width:400px;
-      height: 200px;
-    }
-  }
-}
-
-@import "variable";
 @import "reset";
 @import "font-awesome";
 @import "tops";
 @import "users";
-@import "articles";
+@import "article/new";
+@import "article/index";
+@import "article/user_articles";
+@import "header";
+
+@font-face{
+  font-family: "Daniels";
+  src: url('Daniels Signature DEMO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: "Sketch";
+  src: url('Sketch Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

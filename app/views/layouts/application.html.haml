@@ -9,18 +9,23 @@
   %body
     .header
       .welcome
-        Welcome!
-      .resister
-        .header
-          - if user_signed_in?
-            %h3.user__name
-            = current_user.name
-            .user_nav.grid-6
-              = link_to "ログアウト", destroy_user_session_path, method: :delete
-              %a.post{:href => "/articles/new"} 投稿する
-          - else
-            .grid-6
-              = link_to "ログイン", new_user_session_path, class: 'post'
-              = link_to "新規登録", new_user_registration_path, class: 'post'
+        = link_to 'Welcome', root_path, class: "welcome-path"
+      - if user_signed_in?
+        %h1.user-name
+          = current_user.name
+          さん
+        .right-block
+          .mypage-link
+            = link_to 'マイページへ', user_articles_user_articles_path(current_user), class: "mypage-path"
+          .new-link
+            = link_to '記事を書く', new_article_path, class: "new-article-path"
+          .user-logout-link
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-path"
+      - else
+        .right-block
+          .user-login-link
+            = link_to "ログイン", new_user_session_path, class: 'login-path'
+          .user-dignup-link
+            = link_to "新規登録", new_user_registration_path, class: 'signup-path'
 
     = yield

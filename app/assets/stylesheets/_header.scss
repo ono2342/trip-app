@@ -1,0 +1,35 @@
+.header {
+  position: fixed;
+  height: 70px;
+  background-color: rgb(213, 236, 255);
+  display: flex;
+  width: 100%;
+  z-index: 1;
+  .welcome {
+    font-size: 50px;
+    .welcome-path {
+      font-family: 'Sketch';
+      text-decoration: none;
+      color: #1b0a6e;
+    }
+  }
+  h1 {
+    font-size: 25px;
+    font-family: 'arial unicode ms';
+    margin: auto auto 10px 20px;
+    color: #1b0a6e;
+  }
+  .right-block {
+    display: flex;
+    margin: 0 0 0 auto;
+    .mypage-link, .new-link, .user-logout-link, .user-login-link, .user-dignup-link {
+      font-family: 'arial unicode ms';
+      font-size: 25px;
+      margin: auto auto 10px 20px;
+      .mypage-path, .new-article-path, .logout-path, .login-path, .signup-path {
+        text-decoration: none;
+        color: #1b0a6e;
+      }
+    }
+  }
+}

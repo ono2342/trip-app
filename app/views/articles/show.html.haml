@@ -1,16 +1,12 @@
-%p#notice= notice
-%p
-  %strong Title:
+.show-title
   = @article.title
-%p
-  %strong Content:
-  = @article.content
-%p
-  %strong Image:
-  - if @article.image?
+.show-content
+  = simple_format(@article.text)
+.show-image
+  - if @article.images.present?
     .article_image
-      - @article.image.each do |image|
-        = image_tag(image.url)
-= link_to 'Edit', edit_article_path(@article)
-|
-= link_to 'Back', articles_path
+      - @article.images.each do |image|
+        = image_tag image.image.url
+.link_edit
+  = link_to '記事を編集する', edit_article_path(@article)
+  = link_to "削除する", article_path(@article), method: :delete,class:"destroy-btn"
