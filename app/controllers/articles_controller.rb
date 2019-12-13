@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
       params[:images][:image].each do |image|
         @article.images.create(image: image, article_id: @article.id)
       end
-      render :index
+      redirect_to root_path
     else
       render :new
     end
