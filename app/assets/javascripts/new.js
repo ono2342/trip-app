@@ -80,9 +80,4 @@ $(document).on("turbolinks:load", function() {
       return false;
     });
   });
-  // $(function() {  //編集ページ
-  //   name = $('.current_user_name').val();
-  //   console.log(name[0].image);
-  //   console.log(name[1]);
-  // })
 });
