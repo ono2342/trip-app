@@ -18,7 +18,6 @@
                 - article.images.each do |image|
                   = image_tag image.image.url
           .article_detail
-            = link_to '記事を編集する', edit_article_path(article)
             = link_to "記事を削除する", article_path(article), method: :delete,class:"destroy-btn"
   - else
     .article_none

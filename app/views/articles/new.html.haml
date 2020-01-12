@@ -1,3 +1,39 @@
-%h1 New Article
-= render 'form', article: @article
-= link_to 'Back', articles_path
+.article-new-form
+  .new-content
+    = form_for @article do |form|
+      .form-field
+        .text-field
+          .title
+            = form.text_field :title, placeholder:'タイトルを入力してください'
+          .country
+            = form.collection_select :country_id, Country.all, :id, :name, :include_blank => "国を選択してください"
+          .content
+            = form.text_area :text, placeholder:'本文を入力してください'
+
+        .image-field
+          = form.label :画像は3枚まで投稿できます。
+          .image-select
+            = form.fields_for :article do |image|
+              .image1
+                = image.label :image, for: "user_img1" do
+                  = image.file_field :image, name: 'images[image][]', id: :user_img1, type: :file, style: "display:none;"
+                  画像を選択
+                =image_tag "11 23.58.31.png", id:"img1", style: "width:200px; height:200px;"
+                %button#btn1{style: "display:block;"} 画像を削除する
+              .image2
+                = image.label :image, for: "user_img2" do
+                  = image.file_field :image, name: 'images[image][]', id: :user_img2, type: :file, style: "display:none;"
+                  画像を選択
+                =image_tag "11 23.58.31.png", id:"img2", style: "width:200px; height:200px;"
+                %button#btn2{style: "display:block;"} 画像を削除する
+              .image3
+                = image.label :image, for: "user_img3" do
+                  = image.file_field :image, name: 'images[image][]', id: :user_img3, type: :file, style: "display:none;"
+                  画像を選択
+                =image_tag "11 23.58.31.png", id:"img3", style: "width:200px; height:200px;"
+                %button#btn3{style: "display:block;"} 画像を削除する
+      .submit-action
+        = form.submit '投稿する', class: 'form-submit'
+  
+  .top-link
+    = link_to 'トップに戻る', root_path

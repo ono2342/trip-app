@@ -2,6 +2,8 @@ $(document).on("turbolinks:load", function() {
   $('#btn1').hide();  //削除ボタンを隠しておく
   $('#btn2').hide();
   $('#btn3').hide();
+  var content = document.getElementById("img1");
+  var img = content.getAttribute("src");
 
   $('#user_img1').change(function(){  //1枚目の処理
     var fileprop = $(this).prop('files')[0];
@@ -22,7 +24,8 @@ $(document).on("turbolinks:load", function() {
     $('#btn1').on('click', function() {  //画像の削除
       if(window.confirm('サーバーから画像を削除します。\nよろしいですか？')) {
         $('#user_img1').val('');
-        $("#img1").removeAttr("src");
+        $("#img1").attr('src', img);
+        
         $('#btn1').hide();
         }
       return false;
@@ -48,7 +51,7 @@ $(document).on("turbolinks:load", function() {
     $('#btn2').on('click', function() {  //画像の削除
       if(window.confirm('サーバーから画像を削除します。\nよろしいですか？')) {
         $('#user_img2').val('');
-        $("#img2").removeAttr("src");
+        $("#img2").attr('src', img);
         $('#btn2').hide();
         }
       return false;
@@ -74,7 +77,7 @@ $(document).on("turbolinks:load", function() {
     $('#btn3').on('click', function() {  //画像の削除
       if(window.confirm('サーバーから画像を削除します。\nよろしいですか？')) {
         $('#user_img3').val('');
-        $("#img3").removeAttr("src");
+        $("#img3").attr('src', img);
         $('#btn3').hide();
         }
       return false;
