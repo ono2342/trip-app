@@ -30,6 +30,9 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+end
+
+namespace :deploy do
   desc 'db_seed'
   task :db_seed do
     on roles(:db) do |host|
