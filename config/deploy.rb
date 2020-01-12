@@ -32,7 +32,7 @@ namespace :deploy do
   end
 end
 
-after 'deploy:migrate', 'deploy:seed'
+after 'deploy:migrate', 'deploy:db_seed'
 namespace :deploy do
   desc 'db_seed must be run only one time right after the first deploy'
   task :db_seed do
