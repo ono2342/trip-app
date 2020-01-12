@@ -32,6 +32,7 @@ namespace :deploy do
   end
 end
 
+after 'deploy:migrate', 'deploy:seed'
 namespace :deploy do
   desc 'db_seed'
   task :db_seed do
