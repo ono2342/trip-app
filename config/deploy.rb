@@ -5,7 +5,7 @@ lock "~> 3.11.2"
 set :application, 'trip-app'
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:trip-app.git'
+set :repo_url,  'git@github.com:ono2342/trip-app.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
