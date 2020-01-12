@@ -34,13 +34,11 @@ end
 
 after 'deploy:migrate', 'deploy:seed'
 namespace :deploy do
-  desc 'db_seed'
+  desc 'db_seed must be run only one time right after the first deploy'
   task :db_seed do
     on roles(:db) do |host|
-      with rails_env: fetch(:rails_env) do
-        within current_path do
-          execute :bundle, :exec, :rake, 'db:seed'
-        end
+      within current_path do
+        execute 'bundle exec rake', 'db:seed'
       end
     end
   end
