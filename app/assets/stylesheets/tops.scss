@@ -2,7 +2,9 @@
   padding-top:70px;
   box-sizing: border-box;
   display: flex;
+  height:100vh;
   .side-bar {
+    height:100vh;
     box-sizing: border-box;
     width: 250px;
     font-size: 20px;
@@ -32,22 +34,12 @@
       text-shadow: none;
     }
   }
-  .concepts {
-    background-color: rgb(213, 236, 255);
-    width:calc(100% - 250px);
-    box-sizing: border-box;
-    .title {
-      font-family: "Daniels";
-      padding: 80px;
-      margin-top:50px;
-      font-size: 130px;
-      color: rgb(41, 137, 248);
-    }
-    .message {
-      font-family: "Daniels";
-      padding: 70px;
-      font-size: 40px;
-      color: #1b0a6e;
+  .articles {
+    overflow: scroll;
+    .articles_list {
+      .show_detail {
+        margin: 0 160px;
+      }
     }
   }
 }
