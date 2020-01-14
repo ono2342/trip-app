@@ -1,18 +1,24 @@
-.country_articles
-  .show_detail
-    - @articles.each do |article|
-      .article-block
-        .show-title
-          = article.title
-        .show-country
-          = article.country.name
-        .show-content
-          = simple_format(article.text)
-        .show-image
-          - if article.images.present?
-            .article_image
-              - article.images.each do |image|
-                = image_tag image.image.url
+.articles_list
+  .articles_name
+    = @country.name
+  - if @articles.present?
+    .show_detail
+      - @articles.each do |article|
+        .article-block
+          .show-title
+            = article.title
+          .show-country
+            = article.country.name
+          .show-content
+            = simple_format(article.text)
+          .show-image
+            - if article.images.present?
+              .article_image
+                - article.images.each do |image|
+                  = image_tag image.image.url
+  - else
+    .article_none
+      投稿記事はまだありません。
 
   .top-link
     = link_to 'トップに戻る', root_path

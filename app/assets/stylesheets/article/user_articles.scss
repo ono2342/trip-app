@@ -1,9 +1,9 @@
-.user_articles {
+.articles_list {
   box-sizing: border-box;
   padding-top: 70px;
   background-color: rgb(213, 236, 255);
   color: #1b0a6e;
-  .user_name {
+  .articles_name {
     padding: 40px 0 0 150px;
     font-size: 25px;
     font-weight: bold;
@@ -34,6 +34,9 @@
         padding: 20px 20px 0 20px;
         .article_image {
           padding :30px;
+          img {
+            width: 100%;
+          }
         }
       }
       .article_detail {
