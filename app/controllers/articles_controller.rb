@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :move_to_index
+  before_action :move_to_index, except: [:index]
   before_action :set_country, only: [:index]
   before_action :set_user, only: [:user_articles]
   before_action :set_article, only: [:edit, :update, :destroy]
